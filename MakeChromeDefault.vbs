@@ -4,7 +4,7 @@ Set objShell=CreateObject("WScript.Shell")
 Set objFSO=CreateObject("Scripting.FileSystemObject")
 
 'enter the path for your PowerShell Script
-strPath="C:\Users\E002796\Documents\MakeChromeDefault\MakeChromeDefault.ps1"
+strPath="C:\Users\shiitake\Documents\MakeChromeDefault\MakeChromeDefault.ps1"
 
 
 If objFSO.FileExists(strPath) Then

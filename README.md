@@ -10,11 +10,11 @@ Requirements:
  
 The work around is to create a scheduled task that will update your default browser. Specifically you can set the task to be triggered on Group Policy Success events (8000-8007). If you open task scheduler in Windows and create a new task you can add these event triggers. It should be under **Microsoft-Windows-GroupPolicy/Operational**. You'll want to create a trigger for each event Id 8000 through 8007.
 
-<img src="https://github.com/shiitake/Chrome-Vs-Group-Policy/blob/master/event-triggers.png" />
+<img src="https://github.com/shiitake/Chrome-Vs-Group-Policy/blob/master/Images/event-triggers.png" />
 
 The task itself will run an VB script which will in turn run a PowerShell script. **Two scripts? That seems dumb!**  It is dumb but it was the only way to avoid any popup windows when the powershell script runs. Even using the *nologo* and *command* options it would still show a brief popup. If you are able to figure out a way around this feel free to update the article.  Create the task action to start a program with the "Program/script" set to **wscript** and put your script location in the "Add arguments" field. 
 
-<img src="https://github.com/shiitake/Chrome-Vs-Group-Policy/blob/master/task-actions.png" />
+<img src="https://github.com/shiitake/Chrome-Vs-Group-Policy/blob/master/Images/task-actions.png" />
 
 On the General tab:
 * Specify your user account

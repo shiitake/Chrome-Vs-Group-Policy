@@ -22,12 +22,13 @@ On the Settings tab:
  
 Here's what the VB script looks like: 
 
+```vb.net
 Dim objShell,objFSO,objFile
 Set objShell=CreateObject("WScript.Shell")
 Set objFSO=CreateObject("Scripting.FileSystemObject")
  
 'enter the path for your PowerShell Script
-strPath="C:\Users\E002796\Documents\MakeChromeDefault\MakeChromeDefault.ps1"
+strPath="C:\Users\shiitake\Documents\MakeChromeDefault\MakeChromeDefault.ps1"
  
 If objFSO.FileExists(strPath) Then
 'return short path name
@@ -46,12 +47,15 @@ Else
 WScript.Echo "Failed to find " & strPath
 WScript.Quit
 End If
+```
 
 Here is the PowerShell script:
+```PowerShell
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice -Name Hash -Value "JlBpKY40AG4="
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice -Name ProgId -Value "ChromeHTML"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice -Name Hash -Value "0VTP7o++1Ys="
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice -Name ProgId -Value "ChromeHTML"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice -Name ProgId -Value "ChromeHTML"
+```
 
 This script updates the registry entries to set Chrome as my default browser and it updates the DNS suffix list to include clickmotive domains. These registry values are specific to Windows 8; if you are using Windows 7 you will want to verify that these are correct. 

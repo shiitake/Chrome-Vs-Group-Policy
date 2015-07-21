@@ -59,7 +59,6 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAs
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice -Name ProgId -Value "ChromeHTML"
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice -Name Hash -Value "0VTP7o++1Ys="
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice -Name ProgId -Value "ChromeHTML"
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice -Name ProgId -Value "ChromeHTML"
 ```
 
 This script updates the registry entries to set Chrome as my default browser and it updates the DNS suffix list to include clickmotive domains. These registry values are specific to Windows 8; if you are using Windows 7 you will want to verify that these are correct. 

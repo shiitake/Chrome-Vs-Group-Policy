@@ -12,7 +12,9 @@ The work around is to create a scheduled task that will update your default brow
 
 <img src="https://github.com/shiitake/Chrome-Vs-Group-Policy/blob/master/Images/event-triggers.png" />
 
-The task itself will run an VB script which will in turn run a PowerShell script. **Two scripts? That seems dumb!**  It is dumb but it was the only way to avoid any popup windows when the powershell script runs. Even using the *nologo* and *command* options it would still show a brief popup. If you are able to figure out a way around this feel free to update the article.  Create the task action to start a program with the "Program/script" set to **wscript** and put your script location in the "Add arguments" field. 
+The task itself will run an VB script which will in turn run a PowerShell script. **Two scripts? That seems dumb!**  It is dumb but it was the only way to avoid any popup windows when the powershell script runs. Even using the *nologo* and *command* options it would still show a brief popup. If you are able to figure out a way around this feel free to file a pull request.
+
+Create the task action to start a program with the "Program/script" set to **wscript** and put your script location in the "Add arguments" field. 
 
 <img src="https://github.com/shiitake/Chrome-Vs-Group-Policy/blob/master/Images/task-actions.png" />
 
@@ -61,4 +63,4 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAs
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice -Name ProgId -Value "ChromeHTML"
 ```
 
-This script updates the registry entries to set Chrome as my default browser and it updates the DNS suffix list to include clickmotive domains. These registry values are specific to Windows 8; if you are using Windows 7 you will want to verify that these are correct. 
+This script updates the registry entries to set Chrome as my default browser. These registry values are specific to Windows 8; if you are using Windows 7 you will want to verify that these are correct. 

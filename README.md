@@ -39,8 +39,8 @@ strPath="C:\Users\shiitake\Documents\MakeChromeDefault\MakeChromeDefault.ps1"
 If objFSO.FileExists(strPath) Then
 'return short path name
 set objFile=objFSO.GetFile(strPath)
-strCMD="powershell -nologo -command" & Chr(34) & "&{" &_
-objFile.ShortPath & "}" & Chr(34)
+strCMD="powershell -nologo -command " & Chr(34) &_
+objFile.ShortPath & Chr(34)
  
 'Uncomment next line for debugging
 'WScript.Echo strCMD
